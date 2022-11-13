@@ -14,7 +14,7 @@ class TransfersController < ApplicationController
     def create
         @transfer = Transfer.create(name: params[:name], amount: params[:amount],user_id: current_user.id)
         
-        JoinCategoryWithTransfer.create(category_id: params[:transfer_id], transfer_id: @transfer.id)
+        JoinCategoriesWithTransfer.create(category_id: params[:transfer_id], transfer_id: @transfer.id)
         redirect_to "/categories/#{params[:transfer_id]}/transfers"
     end
 end
