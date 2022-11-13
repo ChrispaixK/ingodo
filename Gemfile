@@ -74,5 +74,5 @@ end
 # rubocop gem for local linters checker
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-#add devise to handle authentication operations
+# add devise to handle authentication operations
 gem 'devise'
