@@ -1,1 +1,13 @@
-<h1>User x new transfer page</h1>
+<h1>User : <%= current_user.name%> | new Transaction page</h1>
+ <%= form_with url: "/categories/#{@transfer_id }/transfers/create", method: :post do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, :placeholder=>"Label / Motif"  %>
+
+      <%= f.label :amount %>
+      <%= f.number_field :amount, step: :any, :placeholder=>"Amount" %>
+
+    <%= f.hidden_field :transfer_id, value: @transfer_id %>
+    <%= f.submit "Add Transfer" %>
+    </div>
+  <% end %>
