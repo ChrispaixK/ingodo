@@ -1,0 +1,17 @@
+<h1>User <%= current_user.name%> Transaction</h1>
+<h2> Category : <%= @category.name %></h2>
+<% if @category.transfers.length > 0 %>
+  <% @category.transfers.order('created_at DESC').limit(5).each do |t| %>
+
+    <h5><%= t.name %></h5>
+    <p><%= t.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
+    <p>$<%= t.amount %></p>
+    
+  <% end %>
+<% else %>
+<p>zero transfers for now</p>
+<% end %> 
+
+<a href="transfers/new">
+<button>Add Transaction</button>
+</a>
