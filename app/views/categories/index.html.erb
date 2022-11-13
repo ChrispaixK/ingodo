@@ -1,1 +1,17 @@
+<a href="/users/sign_out" >Sign out</a>
 <h1>User categories page</h1>
+<% if @user_categories.length > 0 %>
+  <% @user_categories.each do |category| %>
+    <a href=<%= "categories/#{category.id}/transfers" %>>
+      <img src=<%= category.icon %> class="img-fluid rounded-start" alt="...">     
+      <h5><%= category.name %></h5>
+      <p><%= category.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
+      <p>$<%= category.transfers.sum(:amount) %></p>
+    </a>
+<% end %>
+<% else %>
+  <p>you category list is empty<p>
+<% end %>
+<a href="categories/new">
+<button>Add Category</button>
+</a>
