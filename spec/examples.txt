@@ -1,0 +1,28 @@
+example_id                                               | status | run_time        |
+-------------------------------------------------------- | ------ | --------------- |
+./spec/models/category_spec.rb[1:1]                      | passed | 0.01303 seconds |
+./spec/models/category_spec.rb[1:2]                      | passed | 0.01231 seconds |
+./spec/models/category_spec.rb[1:3]                      | passed | 0.01356 seconds |
+./spec/models/category_spec.rb[1:4]                      | passed | 0.06147 seconds |
+./spec/models/category_spec.rb[1:5]                      | passed | 0.01264 seconds |
+./spec/models/category_spec.rb[1:6]                      | passed | 0.01334 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:1] | passed | 0.02402 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:2] | passed | 0.02135 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:3] | passed | 0.02126 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:4] | passed | 0.02201 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:5] | passed | 0.01796 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:6] | passed | 0.0197 seconds  |
+./spec/models/join_categories_with_transfer_spec.rb[1:7] | passed | 0.02083 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:8] | passed | 0.03286 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:9] | passed | 0.0233 seconds  |
+./spec/models/transfer_spec.rb[1:1]                      | passed | 0.01383 seconds |
+./spec/models/transfer_spec.rb[1:2]                      | passed | 0.01778 seconds |
+./spec/models/transfer_spec.rb[1:3]                      | passed | 0.01109 seconds |
+./spec/models/transfer_spec.rb[1:4]                      | passed | 0.04217 seconds |
+./spec/models/user_spec.rb[1:1]                          | passed | 0.00827 seconds |
+./spec/models/user_spec.rb[1:2]                          | passed | 0.00867 seconds |
+./spec/models/user_spec.rb[1:3]                          | passed | 0.00986 seconds |
+./spec/models/user_spec.rb[1:4]                          | passed | 0.00853 seconds |
+./spec/models/user_spec.rb[1:5]                          | passed | 0.00775 seconds |
+./spec/models/user_spec.rb[1:6]                          | passed | 0.01301 seconds |
+./spec/views/categories/categories_index_spec.rb[1:1]    | passed | 0.23189 seconds |
