@@ -1,5 +1,5 @@
 <a href="/users/sign_out" >Sign out</a>
-<h1>User categories page</h1>
+<h1>User: <%= current_user.name%> categories page</h1>
 <% if @user_categories.length > 0 %>
   <% @user_categories.each do |category| %>
     <a href=<%= "categories/#{category.id}/transfers" %>>
