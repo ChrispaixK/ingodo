@@ -10,13 +10,13 @@ RSpec.describe Category, type: :feature do
       password_confirmation: '123456789',
     )
 
-    Category.create(
+    @category1 = Category.create(
         name: 'Loisir',
         icon: 'loisir-img.com',
         user_id: @user.id
       )
     
-    Category.create(
+    @category2 = Category.create(
       name: 'Clothes',
       icon: 'clothes-img.com',
       user_id: @user.id
@@ -30,8 +30,24 @@ RSpec.describe Category, type: :feature do
 
   end
 
+  it 'Check the presence of Add category button' do
+    expect(page).to have_button('Add Category')
+  end
+
   it 'Check if the categories are present' do
     expect(page).to have_content('Loisir')
     expect(page).to have_content('Clothes')
   end
+
+
+  it 'Check if Add category button link to the right page' do
+    click_link('Add Category')
+    expect(current_path).to eq('/categories/new')
+  end
+
+  it 'Checks if the user_id for categories is correct' do
+    expect(@category1.user_id).to eql(@user.id)
+    expect(@category2.user_id).to eql(@user.id)
+  end
+  
 end
