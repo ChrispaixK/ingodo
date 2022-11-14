@@ -18,7 +18,7 @@ RSpec.describe 'categories index page', type: :feature do
     visit new_user_session_path
     fill_in 'Email', with: 'ck@test.com'
     fill_in 'Password', with: '123456789'
-    click_button 'Log in'
+    click_button 'Log In'
     visit '/'
 
     @transfer1 = Transfer.create(
@@ -29,10 +29,6 @@ RSpec.describe 'categories index page', type: :feature do
     JoinCategoriesWithTransfer.create(category_id: @category.id, transfer_id: @transfer2.id)
 
     visit "/categories/#{@category.id}/transfers"
-  end
-
-  it 'Should have Title = Transaction ' do
-    expect(page).to have_content('Transactions')
   end
 
   it 'Should display category title ' do
