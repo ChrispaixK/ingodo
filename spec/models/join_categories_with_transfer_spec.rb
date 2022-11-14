@@ -19,51 +19,49 @@ RSpec.describe JoinCategoriesWithTransfer, type: :model do
       user_id: @user.id
     )
 
-    @transferSample = JoinCategoriesWithTransfer.create(
+    @transfer_sample = JoinCategoriesWithTransfer.create(
       category_id: @category.id,
       transfer_id: @transfer.id
     )
-
   end
 
   it 'Check if transfer sample is valid' do
-    expect(@transferSample).to be_valid
+    expect(@transfer_sample).to be_valid
   end
 
   it 'Validate the presence of transfer id' do
-    @transferSample.transfer_id = nil
-    expect(@transferSample).to_not be_valid
+    @transfer_sample.transfer_id = nil
+    expect(@transfer_sample).to_not be_valid
   end
 
   it 'Check the value of transfer id' do
-    expect(@transferSample.transfer_id).to eql(@transfer.id)
+    expect(@transfer_sample.transfer_id).to eql(@transfer.id)
   end
 
   it 'Transfer id of th transfer sample is an integer' do
-    expect(@transferSample.transfer_id).to be_kind_of Integer
+    expect(@transfer_sample.transfer_id).to be_kind_of Integer
   end
 
   it 'Transfer id of th transfer sample must be an integer' do
-    @transferSample.transfer_id = 'sampletext'
-    expect(@transferSample).to_not be_valid
+    @transfer_sample.transfer_id = 'sampletext'
+    expect(@transfer_sample).to_not be_valid
   end
 
   it 'Validate the presence of category id' do
-    @transferSample.category_id = nil
-    expect(@transferSample).to_not be_valid
+    @transfer_sample.category_id = nil
+    expect(@transfer_sample).to_not be_valid
   end
 
   it 'Check the value of category id' do
-    expect(@transferSample.category_id).to eql(@category.id)
+    expect(@transfer_sample.category_id).to eql(@category.id)
   end
 
   it 'Category id of th transfer sample is an integer' do
-    expect(@transferSample.category_id).to be_kind_of Integer
+    expect(@transfer_sample.category_id).to be_kind_of Integer
   end
 
   it 'Category id of th transfer sample must be an integer 2' do
-    @transferSample.category_id = 'sampletext'
-    expect(@transferSample).to_not be_valid
+    @transfer_sample.category_id = 'sampletext'
+    expect(@transfer_sample).to_not be_valid
   end
-
 end

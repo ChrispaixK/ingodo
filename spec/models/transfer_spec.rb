@@ -32,5 +32,4 @@ RSpec.describe Transfer, type: :model do
   it 'Check transfer Amount' do
     expect(@transfer.amount).to eql(3785.42)
   end
-
 end

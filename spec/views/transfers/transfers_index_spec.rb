@@ -1,21 +1,19 @@
-
-
 require 'rails_helper'
 
 RSpec.describe 'categories index page', type: :feature do
   before(:each) do
     @user = User.create(
-        name: 'Chrispaix',
-        email: 'ck@test.com',
-        password: '123456789',
-        password_confirmation: '123456789',
-      )
-  
-      @category = Category.create(
-          name: 'Loisir',
-          icon: 'loisir-img.com',
-          user_id: @user.id
-        )
+      name: 'Chrispaix',
+      email: 'ck@test.com',
+      password: '123456789',
+      password_confirmation: '123456789'
+    )
+
+    @category = Category.create(
+      name: 'Loisir',
+      icon: 'loisir-img.com',
+      user_id: @user.id
+    )
 
     visit new_user_session_path
     fill_in 'Email', with: 'ck@test.com'
@@ -24,7 +22,7 @@ RSpec.describe 'categories index page', type: :feature do
     visit '/'
 
     @transfer1 = Transfer.create(
-      name: 'Velo', amount: 54.3, user_id: @user.id,
+      name: 'Velo', amount: 54.3, user_id: @user.id
     )
     @transfer2 = Transfer.create(name: 'Casque velo', amount: 12.5, user_id: @user.id)
     JoinCategoriesWithTransfer.create(category_id: @category.id, transfer_id: @transfer1.id)
@@ -42,7 +40,7 @@ RSpec.describe 'categories index page', type: :feature do
   end
 
   it 'Should have the total of category transfers amount ' do
-    expect(page).to have_content (@category.transfers.sum(:amount).to_s)
+    expect(page).to have_content(@category.transfers.sum(:amount).to_s)
   end
 
   it 'Should have transfers title/names ' do
@@ -63,5 +61,4 @@ RSpec.describe 'categories index page', type: :feature do
     click_link('Add Transaction')
     expect(current_path).to eq("/categories/#{@category.id}/transfers/new")
   end
-
 end

@@ -2,20 +2,19 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :feature do
   before(:each) do
-
     @user = User.create(
       name: 'Chrispaix',
       email: 'ck@test.com',
       password: '123456789',
-      password_confirmation: '123456789',
+      password_confirmation: '123456789'
     )
 
     @category1 = Category.create(
-        name: 'Loisir',
-        icon: 'loisir-img.com',
-        user_id: @user.id
-      )
-    
+      name: 'Loisir',
+      icon: 'loisir-img.com',
+      user_id: @user.id
+    )
+
     @category2 = Category.create(
       name: 'Clothes',
       icon: 'clothes-img.com',
@@ -27,7 +26,6 @@ RSpec.describe Category, type: :feature do
     fill_in 'Password', with: '123456789'
     click_button 'Log in'
     visit '/'
-
   end
 
   it 'Check the presence of Add category button' do
@@ -39,7 +37,6 @@ RSpec.describe Category, type: :feature do
     expect(page).to have_content('Clothes')
   end
 
-
   it 'Check if Add category button link to the right page' do
     click_link('Add Category')
     expect(current_path).to eq('/categories/new')
@@ -49,5 +46,4 @@ RSpec.describe Category, type: :feature do
     expect(@category1.user_id).to eql(@user.id)
     expect(@category2.user_id).to eql(@user.id)
   end
-  
 end

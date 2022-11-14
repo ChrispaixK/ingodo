@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
     @user.password = nil
     expect(@user).to_not be_valid
   end
-  
+
   it 'The user email should be unique' do
     @user2 = User.create(
       name: 'Chrispaix',
@@ -42,5 +42,4 @@ RSpec.describe User, type: :model do
     )
     expect(@user2).to_not be_valid
   end
-
 end
