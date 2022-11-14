@@ -1,5 +1,5 @@
-<h1>User <%= current_user.name%> Transaction</h1>
-<h2> Category : <%= @category.name %></h2>
+<h1>User <%= current_user.name%> Transactions</h1>
+<h2> Category : <%= @category.name %> Total: <%= @category.transfers.sum(:amount)%> </h2>
 <% if @category.transfers.length > 0 %>
   <% @category.transfers.order('created_at DESC').limit(5).each do |t| %>
 
