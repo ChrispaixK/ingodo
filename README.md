@@ -1,24 +1,53 @@
-# README
+# Ingodo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> In English "Wallet", Ingodo is a budget web application that helps to manage your budget, you will mainly have a list of transaction associated with their categories in order to keep on track your spending
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby on Rails
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+- Ruby runtime environment
+- Postgresql
+- Rails
 
-* Database creation
+## Getting Started
 
-* Database initialization
+To get a local copy up and running follow these simple example steps.
 
-* How to run the test suite
+- Clone the repository using `https://github.com/ChrispaixK/Ingodo.git`
+- Navigate to the folder using `Ingodo`
+- Use the following commands to
+    - install necessary gems `bundle install`
+    
+### Testing
 
-* Services (job queues, cache servers, search engines, etc.)
+- to run the tests, do: `rspec`
 
-* Deployment instructions
+## Author
 
-* ...
+👤 **Chrispaix Kaze**
+
+- GitHub: [@Chrispaix Kaze](https://github.com/ChrispaixK)
+- Twitter: [@Chrispaix Kaze](https://twitter.com/ChrispaixK)
+- LinkedIn: [Chrispaix Kaze](https://www.linkedin.com/in/chrispaix-kaze-70445a175/)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT]()licensed.
