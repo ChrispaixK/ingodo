@@ -1,17 +1,35 @@
-<h1>User <%= current_user.name%> Transactions</h1>
-<h2> Category : <%= @category.name %> Total: <%= @category.transfers.sum(:amount)%> </h2>
-<% if @category.transfers.length > 0 %>
-  <% @category.transfers.order('created_at DESC').limit(5).each do |t| %>
+<div class="header">
+<a href="/"><span>&#8617;</span></a>
+<h3><%= @category.name %></h3>
+<h3>$ <%= @category.transfers.sum(:amount)%></h3>
+</div>
 
-    <h5><%= t.name %></h5>
-    <p><%= t.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
-    <p>$<%= t.amount %></p>
-    
+<% x = 0%>
+<% if @category.transfers.length > 0 %>
+  <% @category.transfers.order('created_at ASC').limit(5).each do |t| %>
+
+   <% x=x+1 %>
+
+    <div class="cat-wrapper">
+      <div class="trans-img ">
+        <div class="trans-num">
+        <p><%=x%></p>
+        </div>
+        <img src=<%= @category.icon %> alt="category image">
+      </div>
+      <div class="cat-details"> 
+        <h5><%= t.name %></h5>
+        <p><%= t.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
+      </div>
+    <div class="cat-amount">
+      <p>$<%= t.amount %></p>
+    </div>
+    </div>
   <% end %>
 <% else %>
-<p>zero transfers for now</p>
+<p class="txt-cntr">zero transfers for now</p>
 <% end %> 
 
 <a href="transfers/new">
-<button>Add Transaction</button>
+<button class="btn-submit">Add Transaction</button>
 </a>

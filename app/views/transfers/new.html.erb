@@ -1,13 +1,21 @@
-<h1>User : <%= current_user.name%> | new Transaction page</h1>
+<div class="header">
+<a href="./"><span>&#8617;</span></a>
+<h3><%= current_user.name%> </h3>
+</div>
+<h4 class="txt-cntr">New Transaction page</h4>
  <%= form_with url: "/categories/#{@transfer_id }/transfers/create", method: :post do |f| %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, :placeholder=>"Label / Motif"  %>
+      <div class="field">
+      <%= f.label :name,class:"label" %>
+      <%= f.text_field :name, :placeholder=>"Label / Motif", :class=>"input"  %>
+      </div>
 
-      <%= f.label :amount %>
-      <%= f.number_field :amount, step: :any, :placeholder=>"Amount" %>
+      <div class="field">
+      <%= f.label :amount,class:"label" %>
+      <%= f.number_field :amount, step: :any, :placeholder=>"Amount", :class=>"input" %>
+      </div>
 
     <%= f.hidden_field :transfer_id, value: @transfer_id %>
-    <%= f.submit "Add Transfer" %>
+    <%= f.submit "Add Transfer", :class=>"btn-submit" %>
     </div>
   <% end %>

@@ -1,17 +1,29 @@
+<div class="header">
+<h3><%= current_user.name%> </h3>
 <a href="/users/sign_out" >Sign out</a>
-<h1>User: <%= current_user.name%> categories page</h1>
+</div>
 <% if @user_categories.length > 0 %>
   <% @user_categories.each do |category| %>
-    <a href=<%= "categories/#{category.id}/transfers" %>>
-      <img src=<%= category.icon %> class="img-fluid rounded-start" alt="...">     
-      <h5><%= category.name %></h5>
-      <p><%= category.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
-      <p>$<%= category.transfers.sum(:amount) %></p>
+    <a href=<%= "categories/#{category.id}/transfers" %> class="no-style">
+    <div class="cat-wrapper">
+      <div class="cat-img ">
+        <img src=<%= category.icon %> alt="category image">
+      </div>
+      
+      <div class="cat-details">     
+        <h5><%= category.name %></h5>
+        <p><%= category.created_at.strftime("%d %b %Y   %l:%M %p") %></p>
+      </div>
+      
+      <div class="cat-amount">
+        <p>$<%= category.transfers.sum(:amount) %></p>
+      </div>
+    </div>
     </a>
 <% end %>
 <% else %>
-  <p>you category list is empty<p>
+  <p class="txt-cntr">you category list is empty<p>
 <% end %>
-<a href="categories/new">
+<a href="categories/new" class="bottom">
 <button>Add Category</button>
 </a>
