@@ -1,20 +1,28 @@
 class TransfersController < ApplicationController
   def index
-    @category = Category.find_by(id: params[:id])
-  end
-
-  def ancient
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:category_id])
+    @transfers = @category.transfers.order(created_at: :desc) 
   end
 
   def new
-    @transfer_id = params[:id]
+    @transfer = Transfer.new
+    @categories = current_user.categories
+    @category = Category.find(params[:category_id])
   end
 
   def create
-    @transfer = Transfer.create(name: params[:name], amount: params[:amount], user_id: current_user.id)
+    @category = Category.find(params[:category_id])
+    @transfer = Transfer.new(transfer_params)
+    @transfer.user = current_user
 
-    JoinCategoriesWithTransfer.create(category_id: params[:transfer_id], transfer_id: @transfer.id)
-    redirect_to "/categories/#{params[:transfer_id]}/transfers"
+    @transfer.save
+    redirect_to category_transfers_path(@category)
   end
+
+private
+
+def transfer_params
+  params.require(:transfer).permit(:name,:amount,category_ids:[])
+end
+
 end
