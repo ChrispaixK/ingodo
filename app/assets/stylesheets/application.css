@@ -184,6 +184,7 @@ body {
   margin-top: 120px;
   margin-bottom: 100px;
 }
+
 .logo img {
   width: 300px;
   margin: 0;
@@ -215,7 +216,7 @@ body {
   font-weight: 500;
 }
 
-.header img{
+.header img {
   width: 20px;
 }
 
@@ -260,6 +261,5 @@ body {
 .alert {
   text-align: center;
   font-size: 18px;
-  color: #ff0000;
+  color: #f00;
 }
-

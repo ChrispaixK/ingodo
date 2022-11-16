@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
     @user_categories = Category.where(user_id: current_user.id)
   end
 
-  def new; 
+  def new
     @category = Category.new
   end
 
@@ -12,21 +12,20 @@ class CategoriesController < ApplicationController
     # redirect_to '/categories'
     @category = Category.new(category_params)
     @category.user = current_user
-    
+
     respond_to do |format|
       format.html do
         if @category.save
           flash[:notice] = 'Category created successfully'
-          redirect_to categories_path
         else
           flash[:alert] = 'Category not created Try Again!'
-          redirect_to categories_path
         end
       end
     end
+    redirect_to categories_path
   end
 
-  private 
+  private
 
   def category_params
     params.require(:category).permit(:name, :icon)

@@ -1,7 +1,7 @@
 class TransfersController < ApplicationController
   def index
     @category = Category.find(params[:category_id])
-    @transfers = @category.transfers.order(created_at: :desc) 
+    @transfers = @category.transfers.order(created_at: :desc)
   end
 
   def new
@@ -20,20 +20,19 @@ class TransfersController < ApplicationController
       format.html do
         if @transfer.save
           flash[:notice] = 'Transfer created successfully'
-          
+
         else
           flash[:alert] = 'Transfer not created Try Again!'
-          
+
         end
       end
     end
     redirect_to category_transfers_path(@category)
   end
 
-private
+  private
 
-def transfer_params
-  params.require(:transfer).permit(:name,:amount,category_ids:[])
-end
-
+  def transfer_params
+    params.require(:transfer).permit(:name, :amount, category_ids: [])
+  end
 end
