@@ -25,7 +25,7 @@ RSpec.describe Category, type: :feature do
     fill_in 'Email', with: 'ck@test.com'
     fill_in 'Password', with: '123456789'
     click_button 'Log In'
-    visit '/'
+    visit '/categories'
   end
 
   it 'Check the presence of Add category button' do
