@@ -1,19 +1,25 @@
 <div class="header">
-<a href="/"><span>&#8617;</span></a>
+<a href="/categories"><span>&#8617;</span></a>
+<h3> TRANSACTIONS </h3>
+<img src="https://i.postimg.cc/QNgtRV7X/Untitled-design-4.png" class="search-icon">
+</div>
+<div class="dummy">
+<p>Most recent</p>
+<p>Most ancient</p>
+</div>
+<div class="cat-top">
 <h3><%= @category.name %></h3>
-<h3>$ <%= @category.transfers.sum(:amount)%></h3>
+<h4>$ <%= @category.transfers.sum(:amount)%></h4>
 </div>
 
 <% x = 0%>
-<% if @category.transfers.length > 0 %>
-  <% @category.transfers.order('created_at ASC').limit(5).each do |t| %>
-
-   <% x=x+1 %>
+<% if @transfers.length > 0 %>
+  <% @transfers.each do |t| %>
 
     <div class="cat-wrapper">
       <div class="trans-img ">
         <div class="trans-num">
-        <p><%=x%></p>
+        <p>&#9734;</p>
         </div>
         <img src=<%= @category.icon %> alt="category image">
       </div>
@@ -31,5 +37,5 @@
 <% end %> 
 
 <a href="transfers/new">
-<button class="btn-submit">Add Transaction</button>
+<button class="btn-submit bottom">Add Transaction</button>
 </a>

@@ -3,7 +3,7 @@
 <h3><%= current_user.name%> </h3>
 </div>
 <h4 class="txt-cntr">New Transaction page</h4>
- <%= form_with url: "/categories/#{@transfer_id }/transfers/create", method: :post do |f| %>
+ <%= form_with model:@transfer, url:category_transfers_path do |f| %>
 
       <div class="field">
       <%= f.label :name,class:"label" %>
@@ -15,7 +15,8 @@
       <%= f.number_field :amount, step: :any, :placeholder=>"Amount", :class=>"input" %>
       </div>
 
-    <%= f.hidden_field :transfer_id, value: @transfer_id %>
+    <div class="field">  
+<%= f.collection_select(:category_ids, @categories, :id, :name, {}, { multiple: true, required: true, size: 7, class: "form-select" }) %>     </div>
     <%= f.submit "Add Transfer", :class=>"btn-submit" %>
-    </div>
+
   <% end %>
