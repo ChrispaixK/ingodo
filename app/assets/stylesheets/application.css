@@ -250,3 +250,16 @@ body {
 .dummy :last-child {
   color: rgba(255, 255, 255, 0.404);
 }
+
+.notice {
+  text-align: center;
+  font-size: 18px;
+  color: rgb(18, 219, 18);
+}
+
+.alert {
+  text-align: center;
+  font-size: 18px;
+  color: #ff0000;
+}
+

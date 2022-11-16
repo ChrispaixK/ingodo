@@ -16,6 +16,17 @@ class TransfersController < ApplicationController
     @transfer.user = current_user
 
     @transfer.save
+    respond_to do |format|
+      format.html do
+        if @transfer.save
+          flash[:notice] = 'Transfer created successfully'
+          
+        else
+          flash[:alert] = 'Transfer not created Try Again!'
+          
+        end
+      end
+    end
     redirect_to category_transfers_path(@category)
   end
 

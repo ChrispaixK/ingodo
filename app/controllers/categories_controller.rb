@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
           flash[:notice] = 'Category created successfully'
           redirect_to categories_path
         else
-          flash[:error] = 'Category not created'
+          flash[:alert] = 'Category not created Try Again!'
           redirect_to categories_path
         end
       end
