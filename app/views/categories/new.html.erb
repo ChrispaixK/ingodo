@@ -1,0 +1,24 @@
+<div class="header">
+<a href=<%= "/categories"%>><span>&#8617;</span></a>
+</div>
+
+
+<div>
+  <h3 class="txt-cntr">Add Category</h3>
+  <%= form_with model: @category do |f| %>
+
+    <div class="field">
+      <%= f.label :name, class:"label" %>
+      <%= f.text_field :name,placeholder: "Category Label", :class=>"input"  %>
+    </div>
+
+    <div class="field">
+      <%= f.label :icon, class:"label" %>
+      <%= f.text_field :icon,placeholder: "Image link", :class=>"input" %>
+    </div>
+
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "Add Category", :class=>"btn-submit " %>
+    </div>
+  <% end %>
+</div>

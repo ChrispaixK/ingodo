@@ -1,0 +1,37 @@
+example_id                                               | status | run_time        |
+-------------------------------------------------------- | ------ | --------------- |
+./spec/models/category_spec.rb[1:1]                      | passed | 0.0118 seconds  |
+./spec/models/category_spec.rb[1:2]                      | passed | 0.0233 seconds  |
+./spec/models/category_spec.rb[1:3]                      | passed | 0.01074 seconds |
+./spec/models/category_spec.rb[1:4]                      | passed | 0.01121 seconds |
+./spec/models/category_spec.rb[1:5]                      | passed | 0.01252 seconds |
+./spec/models/category_spec.rb[1:6]                      | passed | 0.01256 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:1] | passed | 0.0193 seconds  |
+./spec/models/join_categories_with_transfer_spec.rb[1:2] | passed | 0.01691 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:3] | passed | 0.01484 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:4] | passed | 0.0192 seconds  |
+./spec/models/join_categories_with_transfer_spec.rb[1:5] | passed | 0.01902 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:6] | passed | 0.02456 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:7] | passed | 0.02019 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:8] | passed | 0.02283 seconds |
+./spec/models/join_categories_with_transfer_spec.rb[1:9] | passed | 0.02093 seconds |
+./spec/models/transfer_spec.rb[1:1]                      | passed | 0.01239 seconds |
+./spec/models/transfer_spec.rb[1:2]                      | passed | 0.01343 seconds |
+./spec/models/transfer_spec.rb[1:3]                      | passed | 0.0157 seconds  |
+./spec/models/transfer_spec.rb[1:4]                      | passed | 0.01225 seconds |
+./spec/models/user_spec.rb[1:1]                          | passed | 0.00738 seconds |
+./spec/models/user_spec.rb[1:2]                          | passed | 0.00761 seconds |
+./spec/models/user_spec.rb[1:3]                          | passed | 0.00718 seconds |
+./spec/models/user_spec.rb[1:4]                          | passed | 0.00678 seconds |
+./spec/models/user_spec.rb[1:5]                          | passed | 0.01031 seconds |
+./spec/models/user_spec.rb[1:6]                          | passed | 0.05439 seconds |
+./spec/views/categories/categories_index_spec.rb[1:1]    | passed | 0.11176 seconds |
+./spec/views/categories/categories_index_spec.rb[1:2]    | passed | 0.06873 seconds |
+./spec/views/categories/categories_index_spec.rb[1:3]    | passed | 0.32743 seconds |
+./spec/views/categories/categories_index_spec.rb[1:4]    | passed | 0.06069 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:1]      | passed | 0.08775 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:2]      | passed | 0.11712 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:3]      | passed | 0.10209 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:4]      | passed | 0.09802 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:5]      | passed | 0.08321 seconds |
+./spec/views/transfers/transfers_index_spec.rb[1:6]      | passed | 0.22447 seconds |
