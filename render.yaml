@@ -1,6 +1,6 @@
 databases:
   -name: Ingodo_development
-  ipAllowList:[]
+  ipAllowList: []
 
 services:
  - type:web
