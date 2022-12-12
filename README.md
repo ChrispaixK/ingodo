@@ -6,10 +6,6 @@
 
 - Ruby on Rails
 
-## Demo live
-
-- [Demo Live link](https://ingodo.herokuapp.com/)
-
 ### Prerequisites
 
 - Ruby runtime environment
