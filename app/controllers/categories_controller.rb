@@ -14,12 +14,7 @@
 #     @category.user = current_user
 
 #     respond_to do |format|
-#       format.html do
-#         if @category.save
-#           flash[:notice] = 'Category created successfully'
-#         else
-#           flash[:alert] = 'Category not created Try Again!'
-#         end
+#     
 #       end
 #     end
 #     redirect_to categories_path
